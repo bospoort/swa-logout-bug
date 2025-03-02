@@ -8,7 +8,7 @@
         "allowedRoles": [ "anonymous" ]
       },
      {
-        "route": "/test.html",
+        "route": "/login.html",
         "allowedRoles": [ "anonymous" ]
       },
       {
@@ -19,10 +19,7 @@
     "responseOverrides": {
       "401": {
         "statusCode": 302,
-        "redirect": "/.auth/login/aad",
-        "headers": {
-          "cache-control": "no-store, must-revalidate, proxy-revalidate, no-cache, max-age=0"
-        }
+        "redirect": "/.auth/login/aad"
       }
     }
   }
