@@ -1,0 +1,28 @@
+{
+    "navigationFallback": {
+      "rewrite": "/index.html"
+    },
+    "routes": [
+      {
+        "route": "/favicon.ico",
+        "allowedRoles": [ "anonymous" ]
+      },
+     {
+        "route": "/test.html",
+        "allowedRoles": [ "anonymous" ]
+      },
+      {
+        "route": "/*",
+        "allowedRoles": [ "authenticated" ]
+      }
+    ],
+    "responseOverrides": {
+      "401": {
+        "statusCode": 302,
+        "redirect": "/.auth/login/aad",
+        "headers": {
+          "cache-control": "no-store, must-revalidate, proxy-revalidate, no-cache, max-age=0"
+        }
+      }
+    }
+  }
