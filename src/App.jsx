@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [userData, setUserData] = useState(null)
 
   const getMe = async () => {
     const response = await fetch('/.auth/me');
     const payload = await response.json();
-    console.log(payload);
     setUserData(payload);
   }
 
@@ -27,13 +25,10 @@ function App() {
           )}
         </div>
         <button onClick={() => {
-          window.location.href = '/.auth/logout?post_logout_redirect_uri=/test.html';
+          window.location.href = '/.auth/logout?post_logout_redirect_uri=/login.html';
         }}>
           Log Out
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
     </>
   )
